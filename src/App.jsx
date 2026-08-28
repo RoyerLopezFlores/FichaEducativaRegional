@@ -7,8 +7,8 @@ function App() {
     <Router>
       <div className="app-layout" style={{ height: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'var(--bg-color)' }}>
         <Routes>
-          <Route path="/" element={<Navigate to="/ficha-educativa" replace />} />
-          <Route path="/ficha-educativa" element={<FichaEducativa />} />
+          <Route path="/" element={<FichaEducativa />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </Router>
