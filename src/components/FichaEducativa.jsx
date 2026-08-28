@@ -11,8 +11,7 @@ export function FichaEducativa() {
 
   useEffect(() => {
     setLoading(true);
-    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
-    fetch(`${API_BASE_URL}/api/exportar/ficha-pdf/regiones`)
+    fetch('/api/exportar/ficha-pdf/regiones')
       .then(res => {
         if (!res.ok) throw new Error('Error al cargar regiones');
         return res.json();
@@ -44,8 +43,7 @@ export function FichaEducativa() {
 
     setIsDownloading(true);
     try {
-      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
-      const response = await fetch(`${API_BASE_URL}/api/exportar/ficha-pdf?region=${encodeURIComponent(selectedRegion)}`);
+      const response = await fetch(`/api/exportar/ficha-pdf?region=${encodeURIComponent(selectedRegion)}`);
       
       if (!response.ok) {
         throw new Error('Error al generar el PDF');
